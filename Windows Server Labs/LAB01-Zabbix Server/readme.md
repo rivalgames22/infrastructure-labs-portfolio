@@ -1,5 +1,7 @@
 # LAB01 - Zabbix server windows client 
 
+![alt text](https://github.com/rivalgames22/infrastructure-labs-portfolio/blob/main/Windows%20Server%20Labs/LAB01-Zabbix%20Server/screenshots/l3.png)
+
 ## Overview
 
 The goal of this lab was to install and configure a fully functional Zabbix server running on Debian 12, along with Apache2 web server and MariaDB as the backend database. The lab includes setting up Zabbix frontend, verifying connectivity, and monitoring the availability of external or internal devices via ICMP (ping) — with no need for SNMP or Zabbix agent installation.
