@@ -45,7 +45,7 @@ Network Setup: Hyper-V with NAT and external switches
 
 ## Configuration Process
 
-Step 1: Installing Zabbix Server
+### Step 1: Installing Zabbix Server
 
 Installed Zabbix server and frontend from the official repo
 
@@ -53,15 +53,7 @@ Configured MariaDB and created Zabbix database and user
 
 Set up Apache2 and verified frontend was reachable from host browser
 
-Common issues:
-
-Misconfigured database access permissions
-
-Missing PHP extensions
-
-Timezone not visible in Apache config (manually appended in php.ini)
-
-Step 2: Setting Up Virtual PC
+### Step 2: Setting Up Virtual PC
 
 Created second VM as test endpoint
 
@@ -71,7 +63,7 @@ Verified ping from host and from Zabbix server
 
 Faced issue where VM got stuck in PXE boot – fixed by using Generation 1 VM and attaching ISO properly
 
-Step 3: Troubleshooting Internet Access
+### Step 3: Troubleshooting Internet Access
 
 School Wi-Fi required MAC-based authentication; NAT network on VM could not access internet
 
@@ -79,25 +71,19 @@ Solved by adding another virtual switch connected to host external adapter
 
 Ensured Zabbix server had internet access through that second switch
 
-Step 4: Monitoring via ICMP
+### Step 4: Monitoring via ICMP
 
 Added host in Zabbix with Agent interface (dummy, required)
 
 Assigned Template Module ICMP Ping
 
-Items (icmpping, icmppingsec, icmppingloss) were present, but host showed UNKNOWN
-
-Realized Zabbix only updates host status if Zabbix agent responds, not with simple checks
-
-Solved by creating custom trigger:
-
-{ICMP-Test:icmpping.max(120)}=0
+Items (icmpping, icmppingsec, icmppingloss) were present
 
 This trigger marked host as DOWN if no ping reply within last 2 minutes
 
 Status transitioned to OK after first response
 
-Step 5: Attempted SNMP Monitoring (Later Abandoned)
+### Step 5: Attempted SNMP Monitoring (Later Abandoned)
 
 Tried to monitor demo.snmplabs.com via SNMPv2
 
@@ -106,3 +92,14 @@ Ping worked, but SNMP failed (UDP port 161 blocked or filtered)
 nmap output: 161/udp open|filtered
 
 Concluded SNMP is not feasible in restricted environments
+
+## What I Learned
+
+- How to configure Zabbix end-to-end from base OS (debian)
+- Configuration of network interfaces in Linux
+- Improved my knowlage of linux commands and navigation in linux filesystem
+- Practiced creating virtual machines with hyperV
+- Configuration of Zabbix server and work with zabbix GUI
+- Diagnosing and solving network-level communication issues
+- Using Hyper-V networking modes (NAT vs External)
+- How to simulate device monitoring in restricted environments
