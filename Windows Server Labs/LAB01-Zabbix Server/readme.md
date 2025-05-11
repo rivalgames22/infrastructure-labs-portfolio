@@ -16,19 +16,29 @@ Troubleshoot host visibility issues and verify proper data collection
 
 ## Environment
 
-Zabbix Server: Debian 12.0 (virtualized via Hyper-V)
+### Virtual Machine 1 (Zabbix Server):
+
+Zabbix Server: Debian 12.0
 
 Database: MariaDB 10.11
 
 Web Server: Apache2
 
-Zabbix Version: 7.2 (with Template Module ICMP Ping)
+Zabbix Version: 7.2
 
 Monitored Targets: Google DNS (8.8.8.8), internal test PC (Windows)
 
 Network Setup: Hyper-V with NAT and external switches
 
-Configuration Process
+### Virtual Machine 2 (Client):
+
+OS: Windows 11 Pro
+
+Service: Zabbix Agent
+
+Network Setup: Hyper-V with NAT and external switches
+
+## Configuration Process
 
 Step 1: Installing Zabbix Server
 
