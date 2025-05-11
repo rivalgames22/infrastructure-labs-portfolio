@@ -52,6 +52,7 @@ Network Setup: Hyper-V with NAT and external switches
   Configured MariaDB and created Zabbix database and user
   
   Set up Apache2 and verified frontend was reachable from host browser
+  ![alt text](https://github.com/rivalgames22/infrastructure-labs-portfolio/blob/main/Windows%20Server%20Labs/LAB01-Zabbix%20Server/screenshots/1l.png)
 
 ### Step 2: Setting Up Virtual PC
 
