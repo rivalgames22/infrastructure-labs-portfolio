@@ -38,6 +38,9 @@ Service: Zabbix Agent
 
 Network Setup: Hyper-V with NAT and external switches
 
+Inline-style: 
+![alt text](https://github.com/rivalgames22/infrastructure-labs-portfolio/blob/main/Windows%20Server%20Labs/LAB01-Zabbix%20Server/screenshots/hyperv.png)
+
 ## Configuration Process
 
 Step 1: Installing Zabbix Server
