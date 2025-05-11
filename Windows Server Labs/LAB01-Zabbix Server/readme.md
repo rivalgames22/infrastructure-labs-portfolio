@@ -1,10 +1,10 @@
 # LAB01 - Zabbix server windows client 
 
-Overview
+## Overview
 
 The goal of this lab was to install and configure a fully functional Zabbix server running on Debian 12, along with Apache2 web server and MariaDB as the backend database. The lab includes setting up Zabbix frontend, verifying connectivity, and monitoring the availability of external or internal devices via ICMP (ping) — with no need for SNMP or Zabbix agent installation.
 
-Objectives
+## Objectives
 
 Deploy and configure Zabbix 7.2 server on Debian 12
 
@@ -14,7 +14,7 @@ Connect and monitor a virtual test PC using ICMP
 
 Troubleshoot host visibility issues and verify proper data collection
 
-Environment
+## Environment
 
 Zabbix Server: Debian 12.0 (virtualized via Hyper-V)
 
