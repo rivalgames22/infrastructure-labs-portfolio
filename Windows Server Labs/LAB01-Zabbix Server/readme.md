@@ -47,51 +47,51 @@ Network Setup: Hyper-V with NAT and external switches
 
 ### Step 1: Installing Zabbix Server
 
-Installed Zabbix server and frontend from the official repo
-
-Configured MariaDB and created Zabbix database and user
-
-Set up Apache2 and verified frontend was reachable from host browser
+  Installed Zabbix server and frontend from the official repo
+  
+  Configured MariaDB and created Zabbix database and user
+  
+  Set up Apache2 and verified frontend was reachable from host browser
 
 ### Step 2: Setting Up Virtual PC
 
-Created second VM as test endpoint
-
-Ensured connectivity by configuring second NIC with static IP
-
-Verified ping from host and from Zabbix server
-
-Faced issue where VM got stuck in PXE boot – fixed by using Generation 1 VM and attaching ISO properly
+  Created second VM as test endpoint
+  
+  Ensured connectivity by configuring second NIC with static IP
+  
+  Verified ping from host and from Zabbix server
+  
+  Faced issue where VM got stuck in PXE boot – fixed by using Generation 1 VM and attaching ISO properly
 
 ### Step 3: Troubleshooting Internet Access
 
-School Wi-Fi required MAC-based authentication; NAT network on VM could not access internet
-
-Solved by adding another virtual switch connected to host external adapter
-
-Ensured Zabbix server had internet access through that second switch
+  School Wi-Fi required MAC-based authentication; NAT network on VM could not access internet
+  
+  Solved by adding another virtual switch connected to host external adapter
+  
+  Ensured Zabbix server had internet access through that second switch
 
 ### Step 4: Monitoring via ICMP
 
-Added host in Zabbix with Agent interface (dummy, required)
-
-Assigned Template Module ICMP Ping
-
-Items (icmpping, icmppingsec, icmppingloss) were present
-
-This trigger marked host as DOWN if no ping reply within last 2 minutes
-
-Status transitioned to OK after first response
+  Added host in Zabbix with Agent interface (dummy, required)
+  
+  Assigned Template Module ICMP Ping
+  
+  Items (icmpping, icmppingsec, icmppingloss) were present
+  
+  This trigger marked host as DOWN if no ping reply within last 2 minutes
+  
+  Status transitioned to OK after first response
 
 ### Step 5: Attempted SNMP Monitoring (Later Abandoned)
 
-Tried to monitor demo.snmplabs.com via SNMPv2
-
-Ping worked, but SNMP failed (UDP port 161 blocked or filtered)
-
-nmap output: 161/udp open|filtered
-
-Concluded SNMP is not feasible in restricted environments
+  Tried to monitor demo.snmplabs.com via SNMPv2
+  
+  Ping worked, but SNMP failed (UDP port 161 blocked or filtered)
+  
+  nmap output: 161/udp open|filtered
+  
+  Concluded SNMP is not feasible in restricted environments
 
 ## What I Learned
 
